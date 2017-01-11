@@ -30,5 +30,5 @@ setup(version=version, name=name, author=author, license=license,
       author_email=author_email, url=url, keywords=keywords, packages=packages,
       entry_points={'console_scripts':
                     ['hello_world = HelloWorld.__main__:main']},
-      tests_require=tests_require, cmdclass={'test': PyTest},
+      tests_require=tests_require, cmdclass={'test': 'pytest'},
       setup_requires=['pytest-runner'])

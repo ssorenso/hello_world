@@ -18,3 +18,7 @@ Revision History
 ----------------
 v1.0.0 - builds properly and dumps into terminal the 'Hello World' expected.
 v1.0.1 - should require pytest-runner module from pip now.
+v1.0.2 - Confirmed I was using a different copy of this code than I should have
+    been.  I've modified it to use the original and this now does not install
+    pytest or pytest-runner, but will allow the user to execute the tests as
+    necessary on their local systems.
