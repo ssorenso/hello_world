@@ -17,21 +17,6 @@ import HelloWorld
 import sys
 
 
-class PyTest(TestCommand):
-    user_options = [('pytest-args=', 'a', "Arguments to pass to pytest")]
-
-    def initialize_options(self):
-        TestCommand.initialize_options(self)
-        self.pytest_args = []
-
-    def run_tests(self):
-        import shlex
-        # import here, cause outside the eggs aren't loaded
-        import pytest
-        errno = pytest.main(shlex.split(self.pytest_args))
-        sys.exit(errno)
-
-
 version = HelloWorld.version
 name = HelloWorld.name
 author = HelloWorld.author
@@ -45,4 +30,5 @@ setup(version=version, name=name, author=author, license=license,
       author_email=author_email, url=url, keywords=keywords, packages=packages,
       entry_points={'console_scripts':
                     ['hello_world = HelloWorld.__main__:main']},
-      tests_require=tests_require, cmdclass={'test': PyTest})
+      tests_require=tests_require, cmdclass={'test': PyTest},
+      setup_requires=['pytest-runner'])

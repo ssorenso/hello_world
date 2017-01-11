@@ -17,3 +17,4 @@ python ./setup.py install
 Revision History
 ----------------
 v1.0.0 - builds properly and dumps into terminal the 'Hello World' expected.
+v1.0.1 - should require pytest-runner module from pip now.
